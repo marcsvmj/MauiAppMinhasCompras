@@ -87,7 +87,7 @@ public partial class ListaProduto : ContentPage
             if(confirm)
             {
                 await App.Db.Delete(p.Id);
-                lista.Remove(p);N
+                lista.Remove(p);
                 await Navigation.PopAsync();
             }
         }
