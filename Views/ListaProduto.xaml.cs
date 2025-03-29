@@ -113,4 +113,9 @@ public partial class ListaProduto : ContentPage
             DisplayAlert("Ops", ex.Message, "OK");
         }
     }
+
+    private async void Filtrar_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Filtragem());
+    }
 }

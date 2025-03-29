@@ -43,5 +43,12 @@ namespace MauiAppMinhasCompras.Helpers
 
             return _conn.QueryAsync<Produto>(sql);
         }
+
+        public async Task<List<Produto>> ListarProdutosPorPeriodoAsync(DateTime inicio, DateTime fim)
+        {
+            return await _conn.Table<Produto>()
+                .Where(p => p.DataCadastro >= inicio && p.DataCadastro <= fim)
+                .ToListAsync();
+        }
     }
 }
